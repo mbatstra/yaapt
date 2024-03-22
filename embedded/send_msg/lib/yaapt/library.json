@@ -1,0 +1,11 @@
+{
+  "name": "yaapt",
+  "version": "0.0.1",
+  "description": "Yet another Arduino(?) plotting terminal.",
+  "license": "MIT",
+  "dependencies": {
+    "nanopb/Nanopb": "~0.4.8"
+  },
+  "frameworks": "*",
+  "platforms": "espressif32"
+}
