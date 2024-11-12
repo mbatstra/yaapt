@@ -1,0 +1,4 @@
+embedded/build/
+desktop/build/
+desktop/.cache/
+compile_commands.json
