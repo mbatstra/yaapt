@@ -31,7 +31,8 @@ void send_msg_interval(const uint8_t* buf, int delay) {
 }
 
 void pack_msg(uint8_t* buf) {
-  SimpleMessage msg = { 42 };
+  SimpleMessage msg = SimpleMessage_init_zero;
+  msg.number = 42;
   pb_ostream_t stream = pb_ostream_from_buffer(buf, sizeof(buf));
   pb_encode(&stream, SimpleMessage_fields, &msg);
 }

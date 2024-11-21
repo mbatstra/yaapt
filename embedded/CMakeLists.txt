@@ -13,6 +13,10 @@ pico_sdk_init()
 
 add_executable(yaapt
   src/main.c
+
+  src/pb_common.c
+  src/pb_encode.c
+  ../protocol/c/yaapt.pb.c
 )
 
 pico_enable_stdio_usb(yaapt 1)
@@ -22,10 +26,10 @@ pico_add_extra_outputs(yaapt)
 
 target_include_directories(yaapt PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}/include
-  ${CMAKE_CURRENT_LIST_DIR}/../protocol/
-  /usr/include/nanopb/
+  ${CMAKE_CURRENT_LIST_DIR}/../protocol/c/
 )
-target_link_libraries(yaapt
+
+target_link_libraries(yaapt PRIVATE
   pico_stdlib
   pico_cyw43_arch_lwip_poll
 )
